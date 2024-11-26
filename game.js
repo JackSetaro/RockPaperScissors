@@ -53,7 +53,7 @@ function playGame(){
 
 function capatalize(word){
     let firstLetter = word.charAt(0);
-    let firstLetterCaps = word.toUpperCase(firstLetter);
+    let firstLetterCaps = firstLetter.toUpperCase();
     return firstLetterCaps + word.slice(1);
 }
 
