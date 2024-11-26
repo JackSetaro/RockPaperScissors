@@ -27,23 +27,23 @@ function playRound(humanChoice, computerChoice){
     
     let result = "";
     if (humanChoice == computerChoice){
-        print("Draw! You Both Picked the Same.");
+        alert("Draw! You Both Picked the Same.");
     } else if (
     (humanChoice == "rock" && computerChoice == "scissor") ||
     (humanChoice == "paper" && computerChoice == "rock") || 
     (humanChoice == "scissor" && computerChoice == "paper")) {
-        print(result + capatalize(humanChoice) + 'beats' + capatalize(computerChoice))
+        alert(result + capatalize(humanChoice) + 'beats' + capatalize(computerChoice))
         humanScore++;
     } else{
-        print(loseText + capatalize(computerChoice) + 'beats' + capatalize(humanChoice))
+        alert(loseText + capatalize(computerChoice) + 'beats' + capatalize(humanChoice))
         computerScore ++;
     }
 }
 
 function playGame(){
-    print("Welcome to Rock, Paper, Scissors");
+    alert("Welcome to Rock, Paper, Scissors");
     for (i = 1; i <= 5; i++){
-        print("Round: " + i);
+        alert("Round: " + i);
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerSelection();
 
