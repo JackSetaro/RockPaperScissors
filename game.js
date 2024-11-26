@@ -22,8 +22,8 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-    const winText = "You Win!";
-    const loseText = "You Lose!";
+    const winText = "You Win! ";
+    const loseText = "You Lose! ";
     
     let result = "";
     if (humanChoice == computerChoice){
@@ -32,10 +32,10 @@ function playRound(humanChoice, computerChoice){
     (humanChoice == "rock" && computerChoice == "scissor") ||
     (humanChoice == "paper" && computerChoice == "rock") || 
     (humanChoice == "scissor" && computerChoice == "paper")) {
-        alert(result + capatalize(humanChoice) + 'beats' + capatalize(computerChoice))
+        alert(result + capatalize(humanChoice) + ' beats ' + capatalize(computerChoice))
         humanScore++;
     } else{
-        alert(loseText + capatalize(computerChoice) + 'beats' + capatalize(humanChoice))
+        alert(loseText + capatalize(computerChoice) + ' beats ' + capatalize(humanChoice))
         computerScore ++;
     }
 }
@@ -52,8 +52,9 @@ function playGame(){
 }
 
 function capatalize(word){
-    let firstLetter = word.toUpperCase(word.charAt(0));
-    return word.slice(1) + firstLetter;
+    let firstLetter = word.charAt(0);
+    let firstLetterCaps = word.toUpperCase();
+    return firstLetterCaps + word.slice(1);
 }
 
 playGame();
