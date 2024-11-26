@@ -24,16 +24,37 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     const winText = "You Win!";
     const loseText = "You Lose!";
-    const rockText = "Rock beats Scissors.";
-    const paperText = "Paper beats Rock.";
-    const scissorsText = "Scissors beats paper";
     
+    let result = "";
     if (humanChoice == computerChoice){
-        return "Draw! You Both Picked the Same."
+        print("Draw! You Both Picked the Same.");
+    } else if (
+    (humanChoice == "rock" && computerChoice == "scissor") ||
+    (humanChoice == "paper" && computerChoice == "rock") || 
+    (humanChoice == "scissor" && computerChoice == "paper")) {
+        print(result + capatalize(humanChoice) + 'beats' + capatalize(computerChoice))
+        humanScore++;
+    } else{
+        print(loseText + capatalize(computerChoice) + 'beats' + capatalize(humanChoice))
+        computerScore ++;
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerSelection();
+function playGame(){
+    print("Welcome to Rock, Paper, Scissors");
+    for (i = 1; i <= 5; i++){
+        print("Round: " + i);
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerSelection();
 
-playRound(humanSelection, computerSelection)
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+function capatalize(word){
+    let firstLetter = word.toUpperCase(word.charAt(0));
+    return word.slice(1) + firstLetter;
+}
+
+playGame();
+
